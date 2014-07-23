@@ -6,9 +6,9 @@ import java.util.List;
 public class ListofLinks {
     public static void main(String... args) throws IOException {
         List<String> ls = new ArrayList<>();
-        FileReader fr = null;
-        try {
-            fr = new FileReader(args[0]);
+
+        try (FileReader fr =  new FileReader(args[0])) {
+
             int b;
             boolean sw = true;
             String str = "";
@@ -25,10 +25,6 @@ public class ListofLinks {
                     str = "";
                 }
             }
-        } catch (IOException e) {
-            System.out.println(e);
-        } finally {
-            if (fr != null) fr.close();
         }
         ls.stream().forEach(System.out::println);
     }
