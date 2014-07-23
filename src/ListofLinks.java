@@ -7,7 +7,7 @@ public class ListofLinks {
     public static void main(String... args) throws IOException {
         List<String> ls = new ArrayList<>();
 
-        try (FileReader fr =  new FileReader(args[0])) {
+        try (FileReader fr = new FileReader(args[0])) {
 
             int b;
             boolean sw = true;
